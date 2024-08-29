@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>(My)SQL decimals are confusing</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="flex flex-col">
+        <div class="max-w-xl m-auto">
+            <div class="flex flex-wrap gap-4">
+                <fieldset class="flex flex-col grow">
+                    <label for="precision" class="block order-first font-bold">Precision</label>
+                    <input type="number" name="precision" id="precision" class="border rounded outline-0 invalid:border-red p-1" value="6" min="1" max="65">
+                </fieldset>
+
+                <fieldset class="flex flex-col grow">
+                    <label for="scale" class="block order-first font-bold">Scale</label>
+                    <input type="number" name="scale" id="scale" class="border rounded outline-0 invalid:border-red p-1" value="2" min="0" max="30">
+                </fieldset>
+            </div>
+
+            <pre class="p-1 my-2 overflow-x-auto bg-slate-100" id="output_min"></pre>
+            <pre class="p-1 my-2 overflow-x-auto bg-slate-100" id="output_max"></pre>
+            <pre class="p-1 my-2 overflow-x-auto bg-slate-100" id="output_mysql"></pre>
+            <pre class="p-1 my-2 overflow-x-auto bg-slate-100" id="output_doctrine"></pre>
+        </div>
+
+        <script src="mysql_decimal.js"></script>
+    </body>
+</html>
